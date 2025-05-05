@@ -1,0 +1,22 @@
+{
+    "name": "@opam/pg_query-ocaml",
+    "version": "0.9.8",
+    "esy": {
+        "build": "dune build -p pg_query",
+        "install": "dune install -p pg_query --prefix #{self.install}",
+        "exportedEnv": {
+            "CAML_LD_LIBRARY_PATH": {
+                "val": "#{self.install : $CAML_LD_LIBRARY_PATH}",
+                "scope": "global"
+            }
+        }
+    },
+    "dependencies": {
+        "@opam/dune": "*",
+        "@opam/ctypes": "0.21.1",
+        "@opam/ctypes-foreign": "0.21.1",
+        "@opam/cmdliner": "*",
+        "@opam/ppx_deriving": "*",
+        "@opam/alcotest": "*"
+    }
+}
